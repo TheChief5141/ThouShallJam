@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 617954469}
   - component: {fileID: 617954468}
   - component: {fileID: 617954467}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,14 +412,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858883854}
-  m_LocalRotation: {x: -0, y: 0.0023932224, z: -0, w: 0.99999714}
-  m_LocalPosition: {x: 1.5500001, y: 2.53, z: -11.3}
+  m_LocalRotation: {x: 0.049950212, y: 0.0025249412, z: 0.0028128177, w: 0.9987446}
+  m_LocalPosition: {x: 1.5500001, y: 6.52, z: -16.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0.274, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.725, y: 0.307, z: 0.338}
 --- !u!114 &1858883858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,10 +493,34 @@ MonoBehaviour:
   playerVelocity: {x: 5, y: 12, z: 0}
   playerAcceleration: {x: 4, y: 4, z: 0}
   playerDirection: {x: 0, y: 0}
-  jumpForce: 0
-  maxJumpHeight: 0
-  gravityModifier: -9
+  currentVerticalSpeed: 0
+  currentHorizontalSpeed: 0
+  currentVerticalAccel: 0
+  currentHorizontalAccel: 0
+  terminalVelocity: {x: 0, y: 0}
+  moveClamp: 13
+  deAcceleration: 120
+  apexBonus: 2
+  characterBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  detectorCount: 3
+  detectionRayLength: 0.5
+  rayBuffer: 0.1
+  jumpHeight: 30
+  jumpApexThreshold: 10
+  coyoteTimeThreshold: 0.1
+  jumpBuffer: 0.1
+  jumpEndEarlyGravityModifier: 3
   frictionModifier: 0
+  gravityModifier: -9
+  fallClamp: -40
+  minFallSpeed: 80
+  maxFallSpeed: 120
+  currentFallSpeed: 0
 --- !u!65 &1992449093
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -568,7 +592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992449091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.32, y: 1.08, z: -5.53}
+  m_LocalPosition: {x: 0.32, y: 1.05, z: -6.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
